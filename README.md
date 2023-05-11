@@ -1,7 +1,7 @@
 
 ## Stress Detection AI
 
-This guide provides step-by-step instructions on how to run my Django project on different operating systems: Windows, macOS, and Linux. Follow the instructions relevant to your operating system.
+This guide provides step-by-step instructions on how to run the project on different operating systems: Windows, macOS, and Linux. Follow the instructions relevant to your operating system.
 
 ** Prerequisites
 
