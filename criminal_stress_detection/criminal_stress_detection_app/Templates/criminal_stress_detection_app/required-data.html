@@ -1,0 +1,93 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home - Brand</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'criminal_stress_detection_app/assets/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
+</head>
+<body>
+    <nav class="navbar navbar-light navbar-expand-md sticky-top navbar-shrink py-3" id="mainNav">
+    <div class="container">
+        <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1">
+            <span class="visually-hidden">Toggle navigation</span>
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navcol-1">
+            <ul class="navbar-nav mx-auto">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link active" href="{% url 'index' %}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'required_data' %}">Required data</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'service' %}">Service</a></li>
+                </ul>
+            </ul>
+        </div>
+    </div>
+</nav>
+<section>
+    <div class="container py-5">
+        <div class="row mb-5">
+            <div class="col-md-8 col-xl-6 text-center mx-auto">
+                <h2 class="fw-bold">Required Data</h2>
+                <p class="text-muted">Being able to detect whether someone is stressed or not require to have some data about the person, for our AI we need six inputs</p>
+            </div>
+        </div>
+        <div class="row row-cols-1 row-cols-md-2 mx-auto" style="max-width: 900px;">
+            <div class="col mb-4">
+                <div><a href="#"><img class="rounded img-fluid shadow w-100 fit-cover" src="{% static 'criminal_stress_detection_app/assets/img/respiration_rate.webp' %}" style="height: 250px;" loading="lazy"></a>
+                    <div class="py-4">
+                        <h4 class="fw-bold">Respiration rate</h4>
+                        <p class="text-muted">Stress triggers the release of stress hormones, such as adrenaline, which can lead to a faster and shallower breathing pattern. This increased respiration rate is part of the body's "fight-or-flight" response.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-4">
+                <div><a href="#"><img class="rounded img-fluid shadow w-100 fit-cover" src="{% static 'criminal_stress_detection_app/assets/img/body_temperature.jpg' %}" style="height: 250px;" loading="lazy"></a>
+                    <div class="py-4">
+                        <h4 class="fw-bold">Body temperature</h4>
+                        <p class="text-muted">During periods of acute stress, the body's "fight-or-flight" response is activated, leading to the release of stress hormones such as cortisol. These hormones can elevate body temperature as part of the body's physiological response to stress.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-4">
+                <div><a href="#"><img class="rounded img-fluid shadow w-100 fit-cover" src="{% static 'criminal_stress_detection_app/assets/img/limb_movement.webp' %}" style="height: 250px;" loading="lazy"></a>
+                    <div class="py-4">
+                        <h4 class="fw-bold">Limb movement</h4>
+                        <p class="text-muted">Stress often leads to increased muscle tension and stiffness, which can restrict normal limb movement and range of motion.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-4">
+                <div><a href="#"><img class="rounded img-fluid shadow w-100 fit-cover" src="{% static 'criminal_stress_detection_app/assets/img/blood_oxygen.jpg' %}" style="height: 250px;" loading="lazy"></a>
+                    <div class="py-4">
+                        <h4 class="fw-bold">Blood oxygen</h4>
+                        <p class="text-muted">During stressful situations, individuals may engage in shallow or rapid breathing, leading to a decrease in the depth of each breath. This can limit the amount of oxygen intake and reduce blood oxygen levels.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-4">
+                <div><a href="#"><img class="rounded img-fluid shadow w-100 fit-cover" src="{% static 'criminal_stress_detection_app/assets/img/eye_movement.jpg' %}" style="height: 250px;" loading="lazy"></a>
+                    <div class="py-4">
+                        <h4 class="fw-bold">Eye movement</h4>
+                        <p class="text-muted">Stress can lead to increased eye movement, including rapid and frequent saccades (quick shifts in gaze). This can be observed as the eyes scanning or darting around, indicating heightened arousal or anxiety.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-4">
+                <div><a href="#"><img class="rounded img-fluid shadow w-100 fit-cover" src="{% static 'criminal_stress_detection_app/assets/img/heart_rate.png' %}" style="height: 250px;" loading="lazy"></a>
+                    <div class="py-4">
+                        <h4 class="fw-bold">Heart rate</h4>
+                        <p class="text-muted">Stress can cause fluctuations in heart rate, leading to irregular beats or palpitations. This can be a result of increased sympathetic nervous system activity and altered electrical signaling in the heart.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+<script src="{% static 'criminal_stress_detection_app/assets/bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'criminal_stress_detection_app/assets/bootstrap/js/bold-and-bright.js' %}"></script>
+</html>

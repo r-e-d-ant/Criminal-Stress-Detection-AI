@@ -1,0 +1,154 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home - Brand</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'criminal_stress_detection_app/assets/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
+</head>
+<body>
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home - Brand</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'criminal_stress_detection_app/assets/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
+</head>
+<body>
+    <nav class="navbar navbar-light navbar-expand-md sticky-top navbar-shrink py-3" id="mainNav">
+        <div class="container">
+            <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1">
+                <span class="visually-hidden">Toggle navigation</span>
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link active" href="{% url 'index' %}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'required_data' %}">Required data</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'service' %}">Service</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<section class="py-5" style="padding: 0px 0px;height: 0;">
+    <div class="container py-5" style="padding: 0;height: 0;">
+        <div class="row mb-4 mb-lg-5" style="margin: -67px;">
+            <div class="col-md-8 col-xl-6 text-center mx-auto">
+                <p class="fw-bold text-success mb-2">Detect stress level</p>
+                <h4>Fill the form</h4>
+            </div>
+        </div>
+        <form method="POST" style="display: flex;flex-direction: column;align-items: center;">
+          {% csrf_token %}
+  <div class="row gap-5">
+    <div class="form-group col-md-2">
+      <label for="inputPassword4" class="mb-2">Snoring rate(sph)</label>
+      <input type="text" class="form-control" name="snoring_rate" placeholder="60" required>
+    </div>
+    <div class="form-group col-md-2">
+      <label for="inputPassword4" class="mb-2">Respiration rate(BPM)</label>
+      <input type="text" class="form-control" name="respiration_rate" placeholder="20" required>
+    </div>
+    <div class="form-group col-md-2">
+      <label for="inputCity" class="mb-2">Body temperature(˙F)</label>
+      <input type="text" class="form-control" name="body_temperature" placeholder="37" required>
+    </div>
+    <div class="form-group col-md-2">
+      <label for="inputState" class="mb-2">Limb movement (mm)</label>
+      <input type="text" class="form-control" name="limb_movement" placeholder="90" required>
+    </div>
+    <div class="form-group col-md-2">
+      <label for="inputZip" class="mb-2">Blood oxygen (%)</label>
+      <input type="text" class="form-control" name="blood_oxygen" placeholder="95" required>
+    </div>
+    <div class="form-group col-md-2">
+      <label for="inputState" class="mb-2">Eye movement (px)</label>
+      <input type="text" class="form-control" name="eye_movement" placeholder="960" required>
+    </div>
+    <div class="form-group col-md-2">
+      <label for="inputZip" class="mb-2">Sleeping hours (hr)</label>
+      <input type="text" class="form-control" name="sleeping_hours" placeholder="6" required>
+    </div>
+    <div class="form-group col-md-2">
+      <label for="inputZip" class="mb-2">Heart rate (BPM)</label>
+      <input type="text" class="form-control" name="heart_rate" placeholder="60" required>
+    </div>
+  </div>
+  <div class="mt-5" style="">
+      <button type="submit" class="btn btn-primary">Check Stress</button>
+  </div>
+</form>
+<table class="table mt-5 border mb-5">
+  <thead class="thead-primary">
+    <tr>
+      <th scope="col">Snoring rate</th>
+      <th scope="col">Respiration rate</th>
+      <th scope="col">Body temp</th>
+      <th scope="col">Limb movement</th>
+      <th scope="col">Blood oxygen</th>
+      <th scope="col">Eye movement</th>
+      <th scope="col">Sleeping hours</th>
+      <th scope="col">Heart rate</th>
+      <th scope="col">Stress Level</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{ submitted_data.snoring_rate }} SPH</td>
+      <td>{{ submitted_data.respiration_rate }} BPM</td>
+      <td>{{ submitted_data.body_temperature }} ˙F</td>
+      <td>{{ submitted_data.limb_movement }} mm</td>
+      <td>{{ submitted_data.blood_oxygen }} %</td>
+      <td>{{ submitted_data.eye_movement }} px</td>
+      <td>{{ submitted_data.sleeping_hours }} Hrs</td>
+      <td>{{ submitted_data.heart_rate }} BPM</td>
+      <td>{{ submitted_data.stress_level }} / 5</td>
+    </tr>
+  </tbody>
+</table>
+<div class="row container mb-4">
+  <div class="col-sm-3 border rounded-2">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Low stress: 1-2</h5>
+        <p class="card-text">Minimal stressors, feeling relaxed and in control.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3 border rounded-2">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Mild stress: 3</h5>
+        <p class="card-text">Slight increase in stress levels, mild tension or worry present.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3 border rounded-2">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Moderate stress: 4</h5>
+        <p class="card-text">Noticeable increase in stress levels, feeling more anxious or overwhelmed.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3 border rounded-2">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">High stress: 5</h5>
+        <p class="card-text">Significant increase in stress levels, feeling highly anxious or tense.</p>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+</section>
+<script src="{% static 'criminal_stress_detection_app/assets/bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'criminal_stress_detection_app/assets/bootstrap/js/bold-and-bright.js' %}"></script>
+</html>

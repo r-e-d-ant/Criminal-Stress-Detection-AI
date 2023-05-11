@@ -1,0 +1,32 @@
+
+# Django project files
+*.pyc
+*.pyo
+__pycache__/
+*.sqlite3
+
+# Development-related files
+*.env
+*.log
+
+# Static files
+/staticfiles/
+/media/
+
+# Secret and sensitive information
+*.secret_key
+*.env
+
+# IDE and editor-specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# System files and directories
+.DS_Store
+Thumbs.db
+
+# Dependency directories
+criminal_stress_detection_virtual_env/
+
